@@ -23,6 +23,9 @@ def readKeysAndValuesFromeFilePath(path):
 
 
 def exportToExcel():
+    '''
+     导出Excel
+    '''
     directory = "iOSLocal"
     targetFile = "localizableToExcel.xls"
     if directory is not None:

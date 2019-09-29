@@ -891,7 +891,7 @@ class Sheet(BaseObject):
                 if blah_rows:
                     print('ROW', rowx, bits1, bits2, file=self.logfile)
                     r.dump(self.logfile,
-                        header="--- sh #%d, rowx=%d ---" % (self.number, rowx))
+                        header="--- shell #%d, rowx=%d ---" % (self.number, rowx))
             elif rc in XL_FORMULA_OPCODES: # 06, 0206, 0406
                 # DEBUG = 1
                 # if DEBUG: print "FORMULA: rc: 0x%04x data: %r" % (rc, data)
@@ -1405,7 +1405,7 @@ class Sheet(BaseObject):
                     if blah_rows:
                         print('ROW_B2', rowx, bits1, has_defaults, file=self.logfile)
                         r.dump(self.logfile,
-                            header="--- sh #%d, rowx=%d ---" % (self.number, rowx))
+                            header="--- shell #%d, rowx=%d ---" % (self.number, rowx))
                 elif rc == XL_COLWIDTH: # BIFF2 only
                     if not fmt_info: continue
                     first_colx, last_colx, width\
