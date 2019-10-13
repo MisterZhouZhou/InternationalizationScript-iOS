@@ -12,8 +12,6 @@ def openExcel(file):
     except Exception as e:
         print(str(e))
 
-
-
 def writeKeysValuesInToLocalizableFile(keys,values,targetFolder):
     if not os.path.exists(targetFolder):
         os.makedirs(targetFolder)
@@ -52,14 +50,7 @@ def importLocalizable(filePath):
     else :
         print("can not open file")
 
-
-
 def main():
-    # parser = OptionParser()
-    # parser.add_option("-f", "--filePath",
-    #                   help="original.xls File Path.",
-    #                   metavar="filePath")
-    # (options, args) = parser.parse_args()
     importLocalizable('localizableToExcel.xls')
 
 if __name__=="__main__":

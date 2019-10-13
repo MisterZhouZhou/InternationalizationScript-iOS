@@ -4,7 +4,6 @@ import xlrd
 import os
 from optparse import OptionParser
 
-
 def openExcel(file):
     try:
         data = xlrd.open_workbook(file)
@@ -12,15 +11,13 @@ def openExcel(file):
     except Exception as e:
         print(str(e))
 
-
-
 def writeKeysValuesInToLocalizableFile(keys,values,targetFolder):
     if not os.path.exists(targetFolder):
         os.makedirs(targetFolder)
 
     fileName = targetFolder + 'Localizable.strings'
     os.system(r'touch %s' % fileName)
-    fp = open(fileName,'wb+')
+    fp = open(fileName, 'wb+')
 
     keyValueList = []
     for indexRow in range(len(keys)):
@@ -49,10 +46,8 @@ def importLocalizable(options):
                 values = table.col_values(indexCol)
                 del values[0]
                 writeKeysValuesInToLocalizableFile(colKeys, values, os.getcwd()+"/iOSLocal/"+languageName+".proj/")
-    else :
+    else:
         print("can not open file")
-
-
 
 def main():
     parser = OptionParser()
